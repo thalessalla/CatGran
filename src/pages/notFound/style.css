@@ -1,0 +1,25 @@
+.container-notfound{
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  >div{
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+  }
+  img{
+    width: 40%;   
+  }
+  p{
+    text-align: center;
+  }
+  button{
+    padding: .4rem 2rem;
+    border: solid #145ecd 1px;
+    border-radius: 4px;
+    margin-top: 2rem;
+    color: #145ecd;
+  }
+}
+

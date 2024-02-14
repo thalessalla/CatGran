@@ -1,0 +1,26 @@
+.header{
+   background-color: #177cdb;;
+  >div{
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: .6rem 0;
+  } 
+  .carrinho-icon{
+    transition: all .3s;
+    opacity: .9;
+  }
+  .carrinho-icon:hover{
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1200px){
+  .header{
+   >div{
+margin: 0 20px;
+   } 
+  }
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "marca": "Toyota",
+    "modelo": "Corolla",
+    "ano": 2022,
+    "cor": "Prata",
+    "preco": 90000,
+    "categoria": "Sedan",
+    "id": 1
+  },
+  {
+    "marca": "Honda",
+    "modelo": "Civic",
+    "ano": 2021,
+    "cor": "Branco",
+    "preco": 85000,
+    "categoria": "Sedan",
+    "id": 2
+  },
+  {
+    "marca": "Ford",
+    "modelo": "Fusion",
+    "ano": 2020,
+    "cor": "Preto",
+    "preco": 80000,
+    "categoria": "Sedan",
+    "id": 3
+  },
+  {
+    "marca": "Chevrolet",
+    "modelo": "Cruze",
+    "ano": 2019,
+    "cor": "Azul",
+    "preco": 75000,
+    "categoria": "Hatch",
+    "id": 4
+  },
+  {
+    "marca": "Volkswagen",
+    "modelo": "Polo",
+    "ano": 2020,
+    "cor": "Preto",
+    "preco": 85000,
+    "categoria": "Hatch",
+    "id": 5
+  }
+]
+
+
+
