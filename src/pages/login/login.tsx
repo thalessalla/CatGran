@@ -31,38 +31,6 @@ export const Login = () => {
 
 
 
-// function Login() {
-//   const [email, setEmail] = useState('');
-//   const [password, setPassword] = useState('');
-
-//   const navigate = useNavigate()
-
-//   const [login, { isLoading: isLoggingIn }] = useLoginMutation();
-//   const [register, { isLoading: isRegistering }] = useRegisterMutation();
-
-//   const handleLogin = async () => {
-//     try {
-//       const response = await login({ email, password }).unwrap();
-//       console.log('Login successful:', response);
-//       navigate('/userPage')
-//     } catch (error) {
-//       console.error('Login failed:', error);
-//       alert("Erro ao logar. Verifique login e senha!")
-//     }
-//   };
-
-//   const handleRegister = async () => {
-//     try {
-//       const response = await register({ email, password }).unwrap();
-//       console.log('Registration successful:', response);
-//       // Lógica para lidar com o registro bem-sucedido, como redirecionamento para outra página
-//     } catch (error) {
-//       console.error('Registration failed:', error);
-//       // Lógica para lidar com falhas de registro, como exibir uma mensagem de erro para o usuário
-//     }
-//   };
-
-
 
 
   return (
@@ -93,31 +61,3 @@ export const Login = () => {
   )
 }
 
-// return (
-//   <section className='section-login'>
-//   <div>
-//   <h1>Login</h1>
-//     <input
-//       type="email"
-//       value={email}
-//       onChange={(e) => setEmail(e.target.value)}
-//       placeholder="Email"
-//     />
-//     <input
-//       type="password"
-//       value={password}
-//       onChange={(e) => setPassword(e.target.value)}
-//       placeholder="Senha"
-//     />
-//     <button onClick={handleLogin} disabled={isLoggingIn}>
-//       {isLoggingIn ? 'Logando...' : 'Login'}
-//     </button>
-//     <button onClick={handleRegister} disabled={isRegistering}>
-//       {isRegistering ? 'Registering...' : 'Register'}
-//     </button>
-//   </div>
-//   </section>
-// );
-// }
-
-// export default Login;

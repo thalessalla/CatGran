@@ -22,7 +22,7 @@ function Cart() {
       <div>
       <h1>Favoritos</h1>
       {cartItems.length === 0 ? (
-        <p>Seu carrinho esta vazio</p>
+        <p>Seu favoritos esta vazio</p>
       ) : (
         <div className='item-cart'>
           {cartItems.map((item, index) => (
@@ -30,7 +30,7 @@ function Cart() {
              <img src={item} alt='Imagem de um gato'/> 
              <div className='btns-card'>
                <button onClick={() => handleRemoveFromCart(item)} className='remove-btn'>Remover</button>
-               <button className='baixar-btn'>Baixar</button>
+               <button className='baixar-btn'> <a href={item} download={index}>Baixar</a> </button>
              </div>
               
             </div>

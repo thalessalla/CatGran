@@ -53,6 +53,10 @@ min-height: 100vh;
   padding: .3rem 1rem;
   color: #ffffff;
   border: none;
+  >a{
+    color: #fff;
+    text-decoration: none;
+  }
   &:hover{
     background-color: #07549c;
   }
