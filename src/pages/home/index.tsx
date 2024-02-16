@@ -5,8 +5,11 @@ import { addToCart } from '../../slices/CartSlices';
 import { likeImage }  from '../../slices/LikeSlices';
 import { useSelector } from 'react-redux';
 import { addComment, removeComment } from '../../slices/ComentarioSlice';
+import { Link, useNavigate } from 'react-router-dom';
 import like from "../../assets/favorite.svg"
 import likeOn from "../../assets/favoriteOn.svg"
+import save from "../../assets/save.svg"
+import saved from "../../assets/saved.svg"
 import './home.css';
 
 interface CatImage {
@@ -26,14 +29,35 @@ function Home() {
   const dispatch = useDispatch();
   const [catImages, setCatImages] = useState<CatImage[]>([]);
   const [newComment, setNewComment] = useState('');
+  const username = localStorage.getItem('username');
+  const [savedImages, setSavedImages] = useState<string[]>([]);
 
   const comments = useSelector((state: RootState) => state.comments.comments);
 
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (!token) {
+      navigate('/');
+    }
+  }, [navigate]);
 
 
 
-  const handleAddToCart = (imageUrl: string) => {   
+
+  // const handleAddToCart = (imageUrl: string) => {   
+  //   dispatch(addToCart(imageUrl));
+  //   setSavedImages([...savedImages, imageUrl]);
+  // };
+
+  const handleSaveImage = (imageUrl: string) => {
     dispatch(addToCart(imageUrl));
+    if (savedImages.includes(imageUrl)) {
+      setSavedImages(savedImages.filter(url => url !== imageUrl));
+    } else {
+      setSavedImages([...savedImages, imageUrl]);
+    }
   };
 
 
@@ -99,8 +123,12 @@ function Home() {
               <img src={catImage.url} alt={`Gato ${index + 1}`} />
 
               <div className='photo-btns'>
-              <button onClick={() => handleAddToCart(catImage.url)} className='btn-cart' 
-              >Adicionar ao Carrinho</button>
+
+
+              <button className="btn-save-card"  onClick={() => handleSaveImage(catImage.url)}>
+                <img src={savedImages.includes(catImage.url) ? saved : save} alt="Ícone de salvar" />
+             </button>
+
 
             <div className="likes">
             <button onClick={() => handleLikeImage(catImage.id)} className='btn-like'>
@@ -112,6 +140,11 @@ function Home() {
             </div>
             </div>
           ))}
+        </div>
+        <div className='saveds-btn'>
+           <Link to="/carrinho">
+             <img src={save} alt="Icone de savar" />
+           </Link>
         </div>
       </div>
      

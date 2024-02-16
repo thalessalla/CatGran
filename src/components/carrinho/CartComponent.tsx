@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import { removeFromCart, clearCart } from '../../slices/CartSlices';
 import "./CartComponent.css"
+import { Link } from 'react-router-dom';
 
 function Cart() {
   const dispatch = useDispatch();
@@ -19,24 +20,29 @@ function Cart() {
   return (
     <div className="cart-container">
       <div>
-      <h1>Carrinho</h1>
+      <h1>Favoritos</h1>
       {cartItems.length === 0 ? (
-        <p>Seu carrinho esta vazio</p>
+        <p>Seu favoritos esta vazio</p>
       ) : (
         <div className='item-cart'>
           {cartItems.map((item, index) => (
             <div key={index}>
              <img src={item} alt='Imagem de um gato'/> 
              <div className='btns-card'>
-               <button onClick={() => handleRemoveFromCart(item)} className='remove-btn'>Remove</button>
-               <button className='baixar-btn'>Baixar</button>
+               <button onClick={() => handleRemoveFromCart(item)} className='remove-btn'>Remover</button>
+               <button className='baixar-btn'> <a href={item} download={index}>Baixar</a> </button>
              </div>
               
             </div>
           ))}
         </div>
       )}
-      <button onClick={handleClearCart} className='remove-btn'>Esvaziar carrinho</button>
+      <div>
+        <button onClick={handleClearCart} className='remove-btn'>Esvaziar favoritos</button>
+        <Link to="/userPage"><button className='btn-secundary'>Voltar</button> </Link> 
+
+      </div>
+      
       </div>
     </div>
   );
