@@ -44,13 +44,13 @@ export const Login = () => {
         type="email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        placeholder="Senha"
+        placeholder="Email"
       />
       <input
         type="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        placeholder="Password"
+        placeholder="Senha"
       />
       <button type="submit" disabled={isLoading}>
         Login
